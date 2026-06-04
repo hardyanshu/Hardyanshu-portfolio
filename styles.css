@@ -1,0 +1,479 @@
+:root {
+    --bg-dark: hsl(222, 24%, 6%);
+    --primary: hsl(263, 90%, 68%);
+    --secondary: hsl(190, 95%, 50%);
+}
+
+.glow-bg-blob {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(100px);
+    /* <--- THIS IS THE MAGIC LINE! */
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.4;
+    transition: var(--transition-smooth);
+}
+
+.app-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: hsla(222, 24%, 6%, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition-smooth);
+}
+
+.spinner {
+    width: 45px;
+    height: 45px;
+    border: 3px solid var(--border-color);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+}
+
+.blob-1 {
+    animation: float-blob-1 25s infinite alternate ease-in-out;
+}
+
+@keyframes float-blob-1 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(10%, 15%) scale(1.1);
+    }
+}
+
+:root {
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-heading: 'Syne', sans-serif;
+}
+
+@media (max-width: 900px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .hero-visual {
+        order: -1;
+    }
+}
+
+.my-bio-text {
+    font-size: 1.5;
+    color: var(--primary);
+    margin-top: 2rem;
+    line-height: 1.8;
+}
+
+.my-custom-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 15px var(--primary-glow);
+    transition: var(--transition-smooth);
+    cursor: pointer;
+}
+
+.my-custom-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--secondary-glow);
+}
+
+/* THE GRID CONTROLLER */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+/* THE INDIVIDUAL CARDS */
+.skill-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    backdrop-filter: blur(12px);
+    transition: var(--transition-smooth);
+}
+
+.skill-card h3 {
+    font-family: var(--font-heading);
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.skill-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* HOVER EFFECT FOR CARDS */
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 20px var(--primary-glow);
+}
+
+/* 1. Global Color Storage */
+:root {
+    --bg-dark: hsl(222, 24%, 6%);
+    --bg-surface: hsla(222, 20%, 11%, 0.75);
+    --border-color: hsla(220, 20%, 20%, 0.6);
+    --primary: hsl(263, 90%, 68%);
+    --primary-glow: hsla(263, 90%, 68%, 0.3);
+    --secondary: hsl(190, 95%, 50%);
+    --text-primary: hsl(210, 40%, 96%);
+    --text-muted: hsl(215, 16%, 68%);
+}
+
+/* 2. Reset Spacing Everywhere */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 3. Paint the Entire Webpage Canvas Dark */
+html,
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+
+    /* 🚀 THE FLEXBOX CENTERING SUPERPOWERS: */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+\/* Style the links container */ .nav-menu {
+    display: flex;
+    gap: 2.2rem;
+    margin-bottom: 2rem;
+    /* Adds a clean cushion below your links */
+}
+
+/* Style the links container */
+.nav-menu {
+    display: flex;
+    gap: 2.2rem;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+}
+
+/* Corrected class name without the extra 's' to match your HTML */
+.nav-link {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: var(--transition-smooth);
+}
+
+/* Make the link turn bright white when hovered */
+.nav-link:hover {
+    color: var(--text-primary);
+}
+
+/* Highlight the active link with your theme purple */
+.nav-link.active {
+    color: var(--primary);
+}
+
+.app-main-content {
+    padding: 2rem;
+    max-width: 1000px;
+    /* Restricts it from stretching too wide on big screens */
+    width: 90%;
+    /* Keeps it responsive on small screens */
+
+    /* 🚀 ACTIVATE FLEXBOX INSIDE THE MAIN CONTENT TOO: */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* This centers the spinner, text, and button! */
+    text-align: center;
+    /* Centers the letters inside your bio paragraph */
+}
+
+/* Dashboard Panel Wrapper */
+.dashboard-panel {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 2rem;
+}
+
+.panel-subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+/* Premium Table Styling */
+.analytics-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.analytics-table th {
+    color: var(--secondary);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.analytics-table td {
+    padding: 1rem 0;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.status-badge.active {
+    background: rgba(190, 95, 50, 0.15);
+    color: var(--secondary);
+}
+
+.status-badge.rising {
+    background: rgba(263, 90, 68, 0.15);
+    color: var(--primary);
+}
+
+.status-badge.completed {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Center-align the header and cell content for the middle column */
+.analytics-table th:nth-child(2),
+.analytics-table td:nth-child(2) {
+    text-align: center;
+}
+
+/* Blog Feed Workspace Layout */
+.blog-container {
+    width: 100%;
+    max-width: 900px;
+    margin-top: 2rem;
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 2.5rem;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Creates side-by-side post items */
+    gap: 2rem;
+}
+
+/* Premium Article Cards */
+.blog-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: var(--transition-smooth);
+}
+
+.card-meta {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--secondary);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+.blog-card h3 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+}
+
+.blog-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    /* Pushes the read-more link to line up along the bottom */
+}
+
+/* Interactive Card Links */
+.read-more-link {
+    text-decoration: none;
+    color: var(--primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+}
+
+/* Hover Physics Animations */
+.blog-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 20px var(--primary-glow);
+}
+
+.blog-card:hover .read-more-link {
+    color: var(--text-primary);
+}
+
+/* Panel Action Layout Container */
+.panel-actions {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    /* Aligns the button cleanly to the right side */
+}
+
+/* Destructive Action Button Styles */
+.danger-btn {
+    background: rgba(235, 87, 87, 0.1);
+    color: #eb5757;
+    border: 1px solid #eb5757;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+/* Crimson Glow Hover Effect */
+.danger-btn:hover {
+    background: #eb5757;
+    color: white;
+    box-shadow: 0 4px 12px rgba(235, 87, 87, 0.3);
+    transform: translateY(-2px);
+}
+
+.card {
+    background: black;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+/* Article Reader Structural Frame */
+.article-reader-container {
+    width: 100%;
+    max-width: 700px;
+    /* Slimmer layout grid for comfortable long-form reading */
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.back-link {
+    background: none;
+    border: none;
+    color: var(--secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 2rem;
+    transition: var(--transition-smooth);
+}
+
+.back-link:hover {
+    color: var(--primary);
+    transform: translateX(-4px);
+    /* Moves left slightly upon hover animation */
+}
+
+/* Typography Matrix */
+.full-article h1 {
+    font-size: 2.2rem;
+    color: #ffffff;
+    line-height: 1.3;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.header-divider {
+    height: 1px;
+    background: linear-gradient(to right, var(--primary), transparent);
+    margin-bottom: 2rem;
+}
+
+.article-body-content p {
+    color: #b3b3b3;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    /* Generous spacing layout between lines */
+    margin-bottom: 1.5rem;
+}

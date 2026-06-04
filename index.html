@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hardyanshu blogs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+
+<body>
+
+    <div class="glow-bg-blob blob-1" aria-hidden="true"></div>
+    <div class="glow-bg-blob blob-2" aria-hidden="true"></div>
+
+    <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="#/home" class="nav-link active" id="nav-link-home" data-route="home">Home</a>
+        <a href="#/blog" class="nav-link" id="nav-link-blog" data-route="blog">Blog</a>
+        <a href="#/admin" class="nav-link" id="nav-link-admin" data-route="admin">Dashboard</a>
+    </nav>
+
+    <main id="app-root" class="app-main-content">
+        <div class="loading-spinner-container">
+            <div class="spinner"></div>
+        </div>
+
+        <section id="home-view" class="app-view">
+
+            <p class="my-bio-text">Hi, I am Hardyanshu. This is my first blog! Also, I am a beginner learning to make
+                projects.</p>
+            <div
+                class="mt-6 p-4 bg-purple-950/30 border border-purple-500/50 rounded-xl max-w-md mx-auto text-center shadow-lg shadow-purple-500/10">
+                <span class="text-xs font-bold uppercase tracking-wider text-purple-400">System Engine Active</span>
+                <p class="text-sm text-gray-300 mt-1">This specific component is completely styled directly inside the
+                    HTML using Tailwind utilities!</p>
+            </div>
+            <a href="https://github.com/hardyanshu" target="_blank" class="my-custom-btn">my github</a>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Frontend</h3>
+                    <p>Building clean skeletons with HTML and styling modern interfaces with CSS.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Design</h3>
+                    <p>Creating futuristic UI layouts, glowing effects, and responsive themes.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Creation</h3>
+                    <p>Turning custom ideas into digital realities completely from scratch.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog-view" class="app-view" style="display: none;">
+            <div class="blog-container">
+                <h2>Latest Blog Articles</h2>
+                <p class="section-subtitle">Thoughts, tutorials, and insights from my coding journey.</p>
+
+                <div class="blog-grid">
+
+                    <article class="blog-card">
+                        <div class="card-meta">June 2026 &bull; Web Dev</div>
+                        <h3>How I Mastered CSS Flexbox and Grid Layouts</h3>
+                        <p>A look behind the scenes of building my very first responsive application dashboard from
+                            scratch using structural grids.</p>
+                        <a href="#/blog/flexbox-mastery" class="read-more-link">Read Article &rarr;</a>
+                    </article>
+
+                    <article class="blog-card">
+                        <div class="card-meta">May 2026 &bull; JavaScript</div>
+                        <h3>Understanding Single Page App Routing Engines</h3>
+                        <p>Demystifying how modern client-side routers manipulate the browser DOM to swap application
+                            views without refreshing pages.</p>
+                        <a href="#/blog/spa-routing" class="read-more-link">Read Article &rarr;</a>
+                    </article>
+
+                </div>
+            </div>
+            <div id="article-reader-view" class="article-reader-container" style="display: none;">
+                <button id="back-to-blog-btn" class="back-link">&larr; Back to Articles</button>
+
+                <article class="full-article">
+                    <header class="article-header">
+                        <span id="article-read-meta" class="card-meta">June 2026 &bull; Web Dev</span>
+                        <h1 id="article-read-title">Article Title Loading...</h1>
+                        <div class="header-divider"></div>
+                    </header>
+
+                    <div id="article-read-content" class="article-body-content"></div>
+                </article>
+            </div>
+        </section>
+
+        <section id="admin-view" class="app-view" style="display: none;">
+            <div class="dashboard-panel">
+                <h2>Creator Dashboard</h2>
+                <p class="panel-subtitle">Real-time workspace analytics and metrics.</p>
+
+                <table class="analytics-table">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;">Metric</th>
+                            <th style="text-align: center;">Value</th>
+                            <th style="text-align: right; padding-right: 10px;">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Total Blog Posts</td>
+                            <td style="text-align: center;">12</td>
+                            <td style="text-align: right; padding-right: 10px;"><span
+                                    class="status-badge active">Live</span></td>
+                        </tr>
+                        <tr>
+                            <td>Monthly Profile Views</td>
+                            <td style="text-align: center;"><span id="live-views">0</span></td>
+                            <td style="text-align: right; padding-right: 10px;"><span class="status-badge rising">+14%
+                                    Growth</span></td>
+                        </tr>
+                        <tr>
+                            <td>Project Completion</td>
+                            <td style="text-align: center;">100%</td>
+                            <td style="text-align: right; padding-right: 10px;"><span
+                                    class="status-badge completed">Done</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="panel-actions">
+                    <button id="reset-analytics-btn" class="danger-btn">Reset Analytics Data</button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
+</body>
+
+</html>
